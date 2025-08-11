@@ -7,25 +7,25 @@
     "spacing": 8, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
+	"hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
+	"hyprland/workspaces",
     ],
     "modules-right": [
         "mpd",
-        "idle_inhibitor",
+//        "idle_inhibitor",
         "pulseaudio",
-        "network",
+//        "network",
         "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "battery",
-        "battery#bat2",
+//        "cpu",
+//        "memory",
+//        "temperature",
+//        "backlight",
+//        "keyboard-state",
+//        "sway/language",
+//        "battery",
+//        "battery#bat2",
         "clock",
         "tray",
         "custom/power"
@@ -105,7 +105,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %b}</big>\n<tt><small>{calendar}</small></tt>",
-	"format": "{:%H:%M %a %m/%d}"
+	"format": "{:%I:%M %p %a %m/%d}"
         // "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
@@ -168,12 +168,12 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        // "format-source": "{volume}% ",
+	// "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
