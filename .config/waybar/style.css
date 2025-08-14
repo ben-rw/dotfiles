@@ -1,3 +1,18 @@
+/* --- Global Styles --- */
+* {
+   /* font-family: 'SF Pro Text', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif; */
+  /* font-size: 13px; */
+  /* font-family: 'JetBrainsMonoNL Nerd Font'; */
+  font-family: 'JetBrainsMonoNL Nerd Font', 'Font Awesome 7 Free', 'SymbolsNerdFont', sans-serif; 
+  font-size: 14px;
+  min-height: 0;
+  padding-top: 1px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 2px;
+}
+
+
 @import "mocha.css";
 * {
   /* reference the color by using @color-name */
@@ -7,9 +22,110 @@
   color: @yellow;*/
 }
 
+
 window#waybar {
   /* you can also GTK3 CSS functions! */
-  background-color: shade(@base, 0.9);
-  border: 2px solid alpha(@crust, 0.3);
-  opacity: 0.8;
+  background-color: transparent;
+  /* border: 2px solid alpha(@crust, 0.3); */
+  /* opacity: 0.8; */
+  /* margin: 0px; */
+  font-weight: 500;
 }
+
+
+/* Rounded containers for all modules */
+.modules-left > *:not(#custom-edge-spacer),
+.modules-center > *:not(#custom-edge-spacer),
+.modules-right > *:not(#custom-edge-spacer) {
+  background-color: shade(@base, 0.85);
+  border-radius: 6px;                    /* fully rounded edges */
+  padding: 2px 2px;                         /* space inside */
+  margin: 2px;                              /* space between modules */
+}
+
+ /* Keep inner elements centered and clean */
+.modules-left > * > *,
+.modules-center > * > *,
+.modules-right > * > * {
+  padding: 0;
+  margin: 0; 
+}             
+
+#workspaces {
+  padding: 0px;
+  margin-left: 0px; /* Margin from the far left edge */
+  margin-right: 4px; /* Spacing after the workspaces module */
+}
+
+#workspaces button {
+  color: #babbf1;
+  border-radius: 6px; /* Workspaces buttons are always rounded */
+  padding: 0px 8px; 
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+/* #workspaces button.active { */
+/*   color: #99d1db; */
+/*   background-color: rgba(153, 209, 219, 0.1); */
+/*   box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2); */
+/* } */
+/**/
+#workspaces button:hover {
+  background: rgb(41, 42, 53); /* Reference bright hover color */
+  color: #c6d0f5;
+}
+
+#clock,
+#pulseaudio,
+#tray {
+  padding: 0px 8px;
+  margin: 5px 0px;
+  min-width: 0;
+}
+
+#custom-power {
+  padding: 0px 8px 0px 5px;
+  margin: 5px 0px;
+  min-width: 0;
+}
+
+
+/* .modules-left > #custom-edge-spacer, */
+/* .modules-center > #custom-edge-spacer, */
+/* .modules-right > #custom-edge-spacer { */
+/*   min-width: 15px; */
+/*   background-color: transparent; */
+/*   box-shadow: none; */
+/*   border-radius: 0; */
+/*   padding: 0; */
+/*   margin: 0; */
+/* } */
+
+/* #custom-edge-spacer { */
+/*   background-color: transparent; */
+/*   background-image: none; */
+/*   box-shadow: none; */
+/*   border: none; */
+/*   border-radius: 0; */
+/*   padding: 0; */
+/*   margin: 0px; */
+/*   min-height: 0; */
+  /* min-width: 150px; */
+  /* If you still see a background, add this */
+  /* background: rgba(0, 0, 0, 0); */
+/*}*/
+/* This is the aggressive reset for the spacer module */
+#custom-edge-spacer {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  min-width: 0px;
+  min-height: 0px;
+   color: transparent;
+} 
+

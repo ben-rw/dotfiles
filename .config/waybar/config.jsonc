@@ -1,23 +1,26 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "margin-bottom": -10,
+   //  "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 8, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-	"hyprland/window"
+	// "hyprland/window"
+        "custom/edge-spacer",
+        "clock",
     ],
     "modules-center": [
-	"hyprland/workspaces",
+      	"hyprland/workspaces",
     ],
     "modules-right": [
-        "mpd",
+        // "mpd",
 //        "idle_inhibitor",
+        // "network",
         "pulseaudio",
-//        "network",
-        "power-profiles-daemon",
+        // "power-profiles-daemon",
 //        "cpu",
 //        "memory",
 //        "temperature",
@@ -26,9 +29,10 @@
 //        "sway/language",
 //        "battery",
 //        "battery#bat2",
-        "clock",
         "tray",
-        "custom/power"
+        "custom/power",
+        "custom/edge-spacer",
+        
     ],
      //Modules configuration
      "hyprland/workspaces": {
@@ -96,16 +100,23 @@
     },
     "tray": {
         "icon-size": 14,
-        "spacing": 10,
+        "spacing": 4,
          "icons": {
-           "blueman": "bluetooth",
+            "nm-applet": "",
+            "blueman": "󰂯",
+            "vesktop": "",
+            "Vesktop": "",
+            "vesktop bald": "",
+            "Vesktop Bald": "",
+            "vencord": "",
+            "discord": "",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         }
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %b}</big>\n<tt><small>{calendar}</small></tt>",
-	"format": "{:%I:%M %p %a %m/%d}"
+        // "tooltip-format": "<big>{:%Y %b}</big>\n<tt><small>{calendar}</small></tt>",
+	"format": "{:%H:%M - %a %m/%d}"
         // "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
@@ -159,12 +170,15 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "",
+        // "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "nmapplet",
+        "exec-if": "true",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -199,10 +213,10 @@
     },
     "custom/power": {
         "format" : "⏻",
-	"exec" : "echo ⏻", 
-	"on-click" : "wlogout",
-	"exec-if" : "true"
-//		"tooltip": false,
+        "exec" : "echo ⏻", 
+        "on-click" : "wlogout",
+        "exec-if" : "true",
+        "tooltip": false,
 //		"menu": "on-click",
 //		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 //		"menu-actions": {
@@ -211,5 +225,10 @@
 //			"suspend": "systemctl suspend",
 //			"hibernate": "systemctl hibernate"
 //		}
-    }
+    },
+
+  "custom/edge-spacer": {
+    "format": "\u200b",
+    "tooltip": false
+  },
 }

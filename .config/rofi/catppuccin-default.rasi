@@ -33,10 +33,11 @@
 
 }
 element {
-    padding: 1px ;
+    padding: 5px ;
     cursor:  pointer;
     spacing: 5px ;
     border:  0;
+    border-radius: 6;
 }
 element normal.normal {
     background-color: @normal-background;
@@ -87,13 +88,18 @@ element-icon {
     text-color:       inherit;
 }
 window {
-    padding:          5;
+    padding:          1;
     background-color: @background;
     border:           1;
+    border-radius: 6;
+    width: 20%;
+    height: 50%;
 }
 mainbox {
     padding: 0;
     border:  0;
+    // border-radius: 6;
+    
 }
 message {
     padding:      1px ;
@@ -117,6 +123,8 @@ scrollbar {
     handle-width: 8px ;
     border:       0;
     handle-color: @normal-foreground;
+    border-radius: 6;
+    
 }
 sidebar {
     border-color: @separatorcolor;
