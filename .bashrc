@@ -18,3 +18,8 @@ fastfetch
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+#starship
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+#starship preset catppuccin-powerline -o ~/.config/starship/starship.toml
+eval "$(starship init bash)"
