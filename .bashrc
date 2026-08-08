@@ -23,3 +23,8 @@ fastfetch
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 #starship preset catppuccin-powerline -o ~/.config/starship/starship.toml
 eval "$(starship init bash)"
+
+#bash-completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
