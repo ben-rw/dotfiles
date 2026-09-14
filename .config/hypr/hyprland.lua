@@ -1,4 +1,5 @@
 -- exec = gsettings set org.gnome.desktop.interface gtk-theme "YOUR_DARK_GTK3_THEME"   # for GTK3 apps
+--
 -- exec = gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"   # for GTK4 apps
 -- env = QT_QPA_PLATFORMTHEME,qt6ct   # for Qt apps
 -- env = CANBERRA_THEME,modern-minimal-ui-sounds-v1
@@ -38,7 +39,8 @@ hl.monitor({
 hl.monitor({
 	output = "HDMI-A-1",
 	position = "auto",
-	disabled = true,
+	mode = "3840x2160@59.94Hz",
+	-- disabled = true,
 })
 
 --##################
@@ -326,8 +328,9 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 hl.window_rule({
 	match = {
-		content = "game",
-		class = "negative:net-runelite-client-RuneLite",
+		-- content = "game",
+		class = "*steam_app*",
+		-- class = "negative:net-runelite-client-RuneLite",
 	},
 	monitor = "DP-1",
 	workspace = "9",
